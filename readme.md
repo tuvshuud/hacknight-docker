@@ -1,6 +1,7 @@
 ### Instructions
 ```
-mkdir hacknight_docker
+git clone https://github.com/tuvshuud/hacknight-docker.git
+cd hacknight-docker
 ```
 
 ```bash
@@ -23,6 +24,8 @@ docker run -d \
     -e MYSQL_DATABASE=todos \
     --name todo-db mysql:5.7.9 --character-set-server=utf8 --collation-server=utf8_general_ci
 
+cp Dockerfile laravel-todo/
+cp entrypoint.sh laravel-todo/
 cd laravel-todo
 
 docker build . -t hacknight/todo_web:latest
