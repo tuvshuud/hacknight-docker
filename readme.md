@@ -29,7 +29,15 @@ docker build . -t hacknight/todo_web:latest
 
 docker run -d -p 8000:80 --link todo-db \
     --name todo-web hacknight/todo_web:latest
+```
 
+```bash
+cp docker-compose.yml laravel-todo/
+docker-compose build --no-cache
+docker-compose up -d
+docker-compose stop
+docker-compose rm -f
+docker-compose start
 ```
 
 #### Survey
