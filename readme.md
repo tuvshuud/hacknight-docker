@@ -28,6 +28,16 @@ cp Dockerfile laravel-todo/
 cp entrypoint.sh laravel-todo/
 cd laravel-todo
 
+cp .env.example .env
+'''
+# modify .env
+DB_HOST=todo-db
+DB_PORT=3306
+DB_DATABASE=todos
+DB_USERNAME=root
+DB_PASSWORD=qwe123
+'''
+
 docker build . -t hacknight/todo_web:latest
 
 docker run -d -p 8000:80 --link todo-db \
